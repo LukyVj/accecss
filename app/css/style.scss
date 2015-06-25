@@ -1,0 +1,40 @@
+html, body{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  float: left;
+
+  font: {
+    family: Arial;
+    weight: 300;
+  }
+
+  main{
+    float: left;
+    width: 100%;
+  }
+}
+
+
+ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  clear: both;
+  height: 300px;
+
+  li{
+    float: left;
+    width: 25%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    img{
+      max-width: 200px;
+      float: left;
+      display: inline;
+    }
+  }
+}

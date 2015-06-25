@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>accecss</title>
+        <link rel="stylesheet" href="css/accecss.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      
+      <main>
+        <header>
+          <h1>Acce<span>CSS</span></h1>
+        </header>
+        <h3>A simple mixin, to check the accessibility of your designs</h3>
+
+
+        <div>
+          <header>
+            Demo
+          </header>
+          <div>
+            <h3>With text</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">foo</a> Repudiandae alias, ex porro eaque explicabo eligendi iusto nulla dolore laboriosam voluptatibus commodi <a href="#">bar</a> quaerat animi, doloribus et quam <a href="#">baz</a> vitae nobis obcaecati. Assumenda.</p>
+          </div>
+
+
+          <div>
+          <h3>With images</h3>
+            <ul>
+              <li><img src="http://thecatapi.com/api/images/get?format=src&type=jpg"></li>
+              <li><img src="http://thecatapi.com/api/images/get?format=src&type=png"></li>
+              <li><img src="http://thecatapi.com/api/images/get?format=src&type=jpg"></li>
+              <li><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></li>
+            </ul>
+            
+          </div>
+        </div>
+
+
+
+        <div>
+          
+      <pre><code>
+        
+/// DEBUG
+/// Use it to debug your styles, it will add non obstrusive debugging lines
+/// @param  {Value} $zones [false]        - Adds zones in css
+/// @param  {Value} $colorBlind [false]   - Adds a grayscaled layer to debug for colorblind people
+/// @param  {Value} $cbFilter [false]     - Adds a filtered layer over the app, corresponding to a certain color blind category
+/// @param  {Value} $element [false]      - Give the name of the element you want to debug
+///
+/// Available filters : `Protanopia`, `Protanomaly`, `Deuteranopia`, `Deuteranomaly`, `Tritanopia`, `Tritanomaly`, `Achromatopsia`, `Achromatomaly`
+///
+/// 
+/// Usage : 
+/// `@include debug(<true:false>, <true:false>, <false:filterName>);` 
+///
+/// @group helpers
+@mixin debug($zones: false, $colorBlind: false, $cbFilter: false, $element: false){
+
+  @if $colorBlind == true and $element == false{
+    html body{
+      filter: grayscale(100%);
+    }
+  }
+  
+  @else if $colorBlind == false and $cbFilter != false{
+    html body{
+      filter: url('../css/filters.svg##{$cbFilter}') !important;
+    }
+  }
+  
+
+  @if $zones == true and $element == false {
+/*
+  CSS Debug : TRUE
+*/
+    *{
+      box-shadow: inset 0 0 0 1px rgba(red, .1);
+      &:hover{
+        box-shadow: inset 0 0 0 1px rgba(red, 1);
+      }
+      + *{
+        box-shadow: inset 0 0 0 1px rgba(blue, .1);
+        &:hover{
+          box-shadow: inset 0 0 0 1px rgba(blue, 1);
+        }
+        + *{
+          box-shadow: inset 0 0 0 1px rgba(green, .1);
+          &:hover{
+            box-shadow: inset 0 0 0 1px rgba(green, 1);
+          }
+          + *{
+            box-shadow: inset 0 0 0 1px rgba(red, .1);
+            &:hover{
+              box-shadow: inset 0 0 0 1px rgba(red, 1);
+            }
+            + *{
+              box-shadow: inset 0 0 0 1px rgba(blue, .1);
+              &:hover{
+                box-shadow: inset 0 0 0 1px rgba(blue, 1);
+              }
+              +  *{
+                box-shadow: inset 0 0 0 1px rgba(green, .1);
+                &:hover{
+                  box-shadow: inset 0 0 0 1px rgba(green, 1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // If given $element 
+  @if $element != false {
+     @if $colorBlind == true{
+    #{$element} {
+      filter: grayscale(100%);
+    }
+  }
+  
+  @else if $colorBlind == false and $cbFilter != false{
+    #{$element} {
+      filter: url('../css/filters.svg##{$cbFilter}') !important;
+    }
+  }
+  
+
+  @if $zones == true{
+    #{$element}{
+      *{
+        box-shadow: inset 0 0 0 1px rgba(red, .1);
+        &:hover{
+          box-shadow: inset 0 0 0 1px rgba(red, 1);
+        }
+          + *{
+            box-shadow: inset 0 0 0 1px rgba(blue, .1);
+            &:hover{
+              box-shadow: inset 0 0 0 1px rgba(blue, 1);
+            }
+            + *{
+              box-shadow: inset 0 0 0 1px rgba(green, .1);
+              &:hover{
+                box-shadow: inset 0 0 0 1px rgba(green, 1);
+              }
+              + *{
+                box-shadow: inset 0 0 0 1px rgba(red, .1);
+                &:hover{
+                  box-shadow: inset 0 0 0 1px rgba(red, 1);
+                }
+                + *{
+                  box-shadow: inset 0 0 0 1px rgba(blue, .1);
+                  &:hover{
+                    box-shadow: inset 0 0 0 1px rgba(blue, 1);
+                  }
+                  +  *{
+                    box-shadow: inset 0 0 0 1px rgba(green, .1);
+                    &:hover{
+                      box-shadow: inset 0 0 0 1px rgba(green, 1);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  @else{
+/*
+   CSS Debug : FALSE
+*/
+  }
+}
+
+// Mixin debug
+// @include debug(<true:false>, <true:false>, <false:filterName>, <false:elementName>); 
+// Param : 
+//        [1]: css zone
+//        [2]: Grayscale view
+//        [3]: Colorblind filters 
+//        [4]: Specified debug element
+
+@include debug(true, false, dystropia, 'body');
+      </code></pre>
+
+        </div>
+      </main>
+
+    </body>
+</html>

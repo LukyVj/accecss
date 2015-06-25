@@ -1,0 +1,97 @@
+{
+  "name": "babel-core",
+  "description": "A compiler for writing next generation JavaScript",
+  "version": "5.6.7",
+  "author": {
+    "name": "Sebastian McKenzie",
+    "email": "sebmck@gmail.com"
+  },
+  "homepage": "https://babeljs.io/",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babel/babel.git"
+  },
+  "main": "browser.js",
+  "browser": {
+    "./lib/babel/api/register/node.js": "./lib/babel/api/register/browser.js"
+  },
+  "keywords": [
+    "harmony",
+    "classes",
+    "modules",
+    "let",
+    "const",
+    "var",
+    "es6",
+    "transpile",
+    "transpiler",
+    "6to5",
+    "babel"
+  ],
+  "scripts": {
+    "bench": "make bench",
+    "test": "make test"
+  },
+  "devDependencies": {
+    "babel": "5.5.7",
+    "browserify": "^9.0.8",
+    "chai": "^2.2.0",
+    "eslint": "^0.21.2",
+    "babel-eslint": "^3.1.9",
+    "esvalid": "^1.1.0",
+    "istanbul": "^0.3.5",
+    "matcha": "^0.6.0",
+    "mocha": "2.2.0",
+    "rimraf": "^2.3.2",
+    "uglify-js": "^2.4.16"
+  },
+  "gitHead": "e8c672bf4f062422e61ee35d0451f2cc72e8d76e",
+  "bugs": {
+    "url": "https://github.com/babel/babel/issues"
+  },
+  "_id": "babel-core@5.6.7",
+  "_shasum": "4477c02c7cf53639d516c4bb4c799646270508e5",
+  "_from": ".",
+  "_npmVersion": "2.9.0",
+  "_nodeVersion": "2.0.0",
+  "_npmUser": {
+    "name": "sebmck",
+    "email": "sebmck@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "sebmck",
+      "email": "sebmck@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "4477c02c7cf53639d516c4bb4c799646270508e5",
+    "tarball": "http://registry.npmjs.org/babel-core/-/babel-core-5.6.7.tgz"
+  },
+  "directories": {},
+  "jspm": {
+    "main": "browser.js",
+    "dependencies": {},
+    "jspmNodeConversion": false,
+    "shim": {
+      "browser": {
+        "exports": "babel"
+      }
+    },
+    "map": {
+      "regenerator/runtime": "babel-runtime/regenerator/runtime"
+    }
+  },
+  "jspmNodeConversion": false,
+  "shim": {
+    "browser": {
+      "exports": "babel"
+    }
+  },
+  "map": {
+    "regenerator/runtime": "babel-runtime/regenerator/runtime"
+  },
+  "registry": "npm",
+  "dependencies": {}
+}

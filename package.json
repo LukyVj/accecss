@@ -1,0 +1,24 @@
+{
+  "name": "AcceCSS",
+  "version": "0.1.0",
+  "description": "SASS Mixin to add more accessibility to your websites",
+  "license": "MIT",
+  "author": "Lucas Bonomi <lucas.bonomi@gmail.com>",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "^5.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "jspm": {
+    "directories": {},
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}
