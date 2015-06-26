@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AcceCSS</title>
+  <link rel="stylesheet" href="dist/css/main.css">
+</head>
+<body>
+
+  <main>
+
+    <header role="header">
+      <div class="align">
+        <h1>Acce<span>CSS</span></h1>
+        <h2>A SASS Mixin</h2>
+        <h3>That debug & check the accessibility of your designs</h3>
+      </div>
+    </header>
+
+    <div class="introduction">
+      <div class="panel">
+        <p>This mixin will allow you to get an overview of all the zones of your layout, get a grascaled version to check the contrast, as well as 8 different filters to emulate the most common coloblindness types</p>
+      </div>
+    </div>
+
+    <div class="content">
+     
+     <div class="content_api panel">
+        <header>
+        <h3>Simple API</h3>
+      </header>
+      <section>
+      <p>What we can call "The API" is the few parameters you will be able to change or combine to use the AcceCSS mixin, it's composed of 4 paramters so far</p>
+          <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">false</span><span class="coma">,</span> <span class="param">false</span><span class="coma"> ,</span> <span class="param">false</span><span class="coma"> ,</span> <span class="param">false</span><span class="mixin"> )</span><span class="coma">;</span>
+<span class="comment">//                 <strong>^       ^        ^        ^</strong></span>
+<span class="comment">//         selector <strong>| </strong>css zones <strong>| </strong>grayscale<strong> | </strong>colorblind filter</span></code></pre>
+      </section>
+
+     </div>
+
+      <div class="content_demos panel">
+
+      <header>
+        <h3>Demos :</h3>
+      </header>
+      <a href="javascript:void(0)" class="button" id="zones">zones</a>
+      <a href="javascript:void(0)" class="button" id="grayscale">grayscale</a>
+      <a href="javascript:void(0)" class="button" id="colorblind1">colorblind : protanopia</a>
+      <a href="javascript:void(0)" class="button" id="colorblind2">colorblind : protanomaly</a>
+      <a href="javascript:void(0)" class="button" id="colorblind3">colorblind : deuteranopia</a>
+      <a href="javascript:void(0)" class="button" id="colorblind4">colorblind : deuteranomaly</a>
+      <a href="javascript:void(0)" class="button" id="colorblind5">colorblind : tritanopia</a>
+      <a href="javascript:void(0)" class="button" id="colorblind6">colorblind : tritanomaly</a>
+      <a href="javascript:void(0)" class="button" id="colorblind7">colorblind : achromatopsia</a>
+      <a href="javascript:void(0)" class="button" id="colorblind8">colorblind : achromatomaly</a>
+      
+      <div>
+        <h3>With text</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">foo</a> Repudiandae alias, ex porro eaque explicabo eligendi iusto nulla dolore laboriosam voluptatibus commodi <a href="#">bar</a> quaerat animi, doloribus et quam <a href="#">baz</a> vitae nobis obcaecati. Assumenda.</p>
+      </div>
+
+
+      <div>
+        <h3>With images</h3>
+        <ul>
+          <li><img src="http://thecatapi.com/api/images/get?format=src&type=jpg"></li>
+          <li><img src="http://thecatapi.com/api/images/get?format=src&type=png"></li>
+          <li><img src="http://thecatapi.com/api/images/get?format=src&type=jpg"></li>
+          <li><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></li>
+        </ul>            
+      </div>
+
+      </div>
+    </div> <!--  ENDOF content -->
+
+
+    <div>
+
+      <pre><code>
+
+      </code></pre>
+
+    </div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>
+
+
+
+<!-- 
+
+
+/// DEBUG
+/// Use it to debug your styles, it will add non obstrusive debugging lines
+/// @param  {Value} $zones [false]        - Adds zones in css
+/// @param  {Value} $colorBlind [false]   - Adds a grayscaled layer to debug for colorblind people
+/// @param  {Value} $cbFilter [false]     - Adds a filtered layer over the app, corresponding to a certain color blind category
+/// @param  {Value} $element [false]      - Give the name of the element you want to debug
+///
+/// Available filters : `Protanopia`, `Protanomaly`, `Deuteranopia`, `Deuteranomaly`, `Tritanopia`, `Tritanomaly`, `Achromatopsia`, `Achromatomaly`
+///
+/// 
+/// Usage : 
+/// `@include debug(<true:false>, <true:false>, <false:filterName>);` 
+///
+/// @group helpers
+@mixin debug($zones: false, $colorBlind: false, $cbFilter: false, $element: false){
+
+  @if $colorBlind == true and $element == false{
+    html body{
+      filter: grayscale(100%);
+    }
+  }
+  
+  @else if $colorBlind == false and $cbFilter != false{
+    html body{
+      filter: url('../css/filters.svg##{$cbFilter}') !important;
+    }
+  }
+  
+
+  @if $zones == true and $element == false {
+/*
+  CSS Debug : TRUE
+*/
+    *{
+      box-shadow: inset 0 0 0 1px rgba(red, .1);
+      &:hover{
+        box-shadow: inset 0 0 0 1px rgba(red, 1);
+      }
+      + *{
+        box-shadow: inset 0 0 0 1px rgba(blue, .1);
+        &:hover{
+          box-shadow: inset 0 0 0 1px rgba(blue, 1);
+        }
+        + *{
+          box-shadow: inset 0 0 0 1px rgba(green, .1);
+          &:hover{
+            box-shadow: inset 0 0 0 1px rgba(green, 1);
+          }
+          + *{
+            box-shadow: inset 0 0 0 1px rgba(red, .1);
+            &:hover{
+              box-shadow: inset 0 0 0 1px rgba(red, 1);
+            }
+            + *{
+              box-shadow: inset 0 0 0 1px rgba(blue, .1);
+              &:hover{
+                box-shadow: inset 0 0 0 1px rgba(blue, 1);
+              }
+              +  *{
+                box-shadow: inset 0 0 0 1px rgba(green, .1);
+                &:hover{
+                  box-shadow: inset 0 0 0 1px rgba(green, 1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // If given $element 
+  @if $element != false {
+     @if $colorBlind == true{
+    #{$element} {
+      filter: grayscale(100%);
+    }
+  }
+  
+  @else if $colorBlind == false and $cbFilter != false{
+    #{$element} {
+      filter: url('../css/filters.svg##{$cbFilter}') !important;
+    }
+  }
+  
+
+  @if $zones == true{
+    #{$element}{
+      *{
+        box-shadow: inset 0 0 0 1px rgba(red, .1);
+        &:hover{
+          box-shadow: inset 0 0 0 1px rgba(red, 1);
+        }
+          + *{
+            box-shadow: inset 0 0 0 1px rgba(blue, .1);
+            &:hover{
+              box-shadow: inset 0 0 0 1px rgba(blue, 1);
+            }
+            + *{
+              box-shadow: inset 0 0 0 1px rgba(green, .1);
+              &:hover{
+                box-shadow: inset 0 0 0 1px rgba(green, 1);
+              }
+              + *{
+                box-shadow: inset 0 0 0 1px rgba(red, .1);
+                &:hover{
+                  box-shadow: inset 0 0 0 1px rgba(red, 1);
+                }
+                + *{
+                  box-shadow: inset 0 0 0 1px rgba(blue, .1);
+                  &:hover{
+                    box-shadow: inset 0 0 0 1px rgba(blue, 1);
+                  }
+                  +  *{
+                    box-shadow: inset 0 0 0 1px rgba(green, .1);
+                    &:hover{
+                      box-shadow: inset 0 0 0 1px rgba(green, 1);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  @else{
+/*
+   CSS Debug : FALSE
+*/
+  }
+}
+
+// Mixin debug
+// @include debug(&lt;true:false&gt;, &lt;true:false&gt;, &lt;false:filterName&gt;, &lt;false:elementName&gt;); 
+// Param : 
+//        [1]: css zone
+//        [2]: Grayscale view
+//        [3]: Colorblind filters 
+//        [4]: Specified debug element
+
+
+ -->
