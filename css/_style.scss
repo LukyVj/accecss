@@ -6,7 +6,7 @@
 }
 :root{
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 28px;
 }
 body{
@@ -21,7 +21,8 @@ html, body{
 
   font: {
     family: 'Source Sans Pro', Arial;
-    weight: 300;
+    weight: 500;
+    size: 17px;
   }
 
 
@@ -42,11 +43,28 @@ html, body{
       height: 420px;
       color: #fff;
       line-height: 1.5;
+    
+     background: {
+          image: linear-gradient(rgba(white, .1) 2px, transparent 2px), linear-gradient(90deg, rgba(white, .1) 2px, transparent 2px), linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+          size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+          position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+          attachment : fixed;
+        }
 
-      background: {
-        color: #39AB73;
-        image: linear-gradient(to bottom right, #39AB73, #1DB1FC);
-        position: fixed;
+      &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    
+        background: {
+          color: #39AB73;
+          image: linear-gradient(to bottom right, #39AB73, #1DB1FC);
+          attachment : fixed;
+        }
+        
+        z-index: -1;
       }
       
 
@@ -56,6 +74,8 @@ html, body{
         padding: 0;
         margin: 0;
         text-shadow: .05em .05em 0 rgba(black, .3);
+        position: relative;
+        z-index: 2;
 
 
         span{
@@ -75,6 +95,13 @@ html, body{
         border-bottom: .12em solid #fff;
         display: inline-block;
         padding: .35em .8em ;
+        position: relative;
+        z-index: 2;
+        text-shadow: .08em .08em 0 rgba(black, .15);
+      }
+
+      h3{
+                text-shadow: .07em .07em 0 rgba(black, .15);
       }
 
     }
@@ -100,7 +127,7 @@ ul{
     width: 25%;
     margin: 0;
     padding: 0;
-    text-align: center;
+    
 
     img{
       max-width: 200px;
@@ -113,7 +140,7 @@ ul{
 
 .introduction {
   margin: auto;
-  text-align: center;
+  
   padding: 1em 0 2em;
   margin-top: 2px;
   display: block;
@@ -146,12 +173,20 @@ ul{
   margin-bottom: 1em;
   background: #fff;
 
-   h3{
-      font-size: 24px;
-      line-height: 32px;
-      margin-bottom: 42px;
-      color: #2EB2E8;
-    }
+  h3{
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 24px;
+    padding: 0;
+    margin-top: 0;
+    color: #2EB2E8;
+  }
+
+  h4{
+    color: #C2C2C2;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 
@@ -244,8 +279,16 @@ ul{
   transition: box-shadow .2s ease-out;
   color: #fff;
   text-decoration: none;
-  text-align: center;
+  
   font-size: 16px;
   background: #2EB2E8;
+  
+  &.active{
+    box-shadow: none;
+    background: darken(#2EB2E8, 13%);
+  }
+}
 
+.classes_list{
+  margin-bottom: 30px
 }

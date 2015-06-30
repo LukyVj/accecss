@@ -6,7 +6,7 @@
 
 :root {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 600;
   line-height: 28px;
 }
 
@@ -21,7 +21,8 @@ html, body {
   margin: 0;
   float: left;
   font-family: 'Source Sans Pro', Arial;
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 17px;
 }
 html main, body main {
   float: left;
@@ -38,9 +39,21 @@ html main header[role="header"], body main header[role="header"] {
   height: 420px;
   color: #fff;
   line-height: 1.5;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 2px, transparent 2px), linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+  background-attachment: fixed;
+}
+html main header[role="header"]:after, body main header[role="header"]:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   background-color: #39AB73;
   background-image: linear-gradient(to bottom right, #39AB73, #1DB1FC);
-  background-position: fixed;
+  background-attachment: fixed;
+  z-index: -1;
 }
 html main header[role="header"] h1, body main header[role="header"] h1 {
   font-size: 3.5em;
@@ -48,6 +61,8 @@ html main header[role="header"] h1, body main header[role="header"] h1 {
   padding: 0;
   margin: 0;
   text-shadow: 0.05em 0.05em 0 rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
 }
 html main header[role="header"] h1 span:before, body main header[role="header"] h1 span:before {
   content: '{';
@@ -62,6 +77,12 @@ html main header[role="header"] h2, body main header[role="header"] h2 {
   border-bottom: .12em solid #fff;
   display: inline-block;
   padding: 0.35em 0.8em;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0.08em 0.08em 0 rgba(0, 0, 0, 0.15);
+}
+html main header[role="header"] h3, body main header[role="header"] h3 {
+  text-shadow: 0.07em 0.07em 0 rgba(0, 0, 0, 0.15);
 }
 
 .align {
@@ -84,7 +105,6 @@ ul li {
   width: 25%;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 ul li img {
   max-width: 200px;
@@ -94,7 +114,6 @@ ul li img {
 
 .introduction {
   margin: auto;
-  text-align: center;
   padding: 1em 0 2em;
   margin-top: 2px;
   display: block;
@@ -124,8 +143,15 @@ ul li img {
 .panel h3 {
   font-size: 24px;
   line-height: 32px;
-  margin-bottom: 42px;
+  margin-bottom: 24px;
+  padding: 0;
+  margin-top: 0;
   color: #2EB2E8;
+}
+.panel h4 {
+  color: #C2C2C2;
+  padding: 0;
+  margin: 0;
 }
 
 .bs-1, .panel {
@@ -208,9 +234,16 @@ ul li img {
   transition: box-shadow .2s ease-out;
   color: #fff;
   text-decoration: none;
-  text-align: center;
   font-size: 16px;
   background: #2EB2E8;
+}
+.button.active {
+  box-shadow: none;
+  background: #158dbf;
+}
+
+.classes_list {
+  margin-bottom: 30px;
 }
 
 /*
