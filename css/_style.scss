@@ -24,7 +24,10 @@ html, body{
     weight: 500;
     size: 17px;
   }
-
+  
+  a{
+    color: inherit
+  }
 
 
   main{
@@ -154,7 +157,9 @@ ul{
 .content{
   margin: auto;
   width: 100%;
-  float: left;
+  max-width: 840px;
+
+  float: none;
 
 
   img{
@@ -167,11 +172,13 @@ ul{
 
 .panel{
   @extend .bs-1; 
-  max-width: 840px;
+
+  float: left;
   padding: 16px;
   margin: auto;
   margin-bottom: 1em;
   background: #fff;
+  width: 100%;
 
   h3{
     font-size: 24px;
@@ -213,7 +220,25 @@ ul{
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22) !important;
 }
 
+.warning{
+  letter-spacing: -1.159999996423721px;
+  text-align: left;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+  background: lighten(#FC261C, 10%);
+  border-radius: 4.80000019073486px 4.80000019073486px 4.80000019073486px 4.80000019073486px;
+  font: normal normal 200 normal 16px/28px Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+  margin: 16px 0px 8px;
+  overflow: auto;
+  padding: 8px;
+  position: relative;
+  color: lighten(#FC261C, 35%);
 
+   p{
+    padding: 0;
+    margin: 0;
+   }
+ }
 .code-sample{
  letter-spacing: -1.159999996423721px;
  tab-size: 4;
@@ -221,7 +246,7 @@ ul{
  text-rendering: optimizeLegibility;
  box-shadow: inset 0 0 0 .1em #eff0f2;
  text-shadow: rgb(255, 255, 255) 0px 1px 0px;
- width: 452px;
+ width: 100%;
  perspective-origin: 226px 30px;
  transform-origin: 226px 30px;
  background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box;
@@ -250,8 +275,13 @@ ul{
   color: #65737E;
 }
 
-.comment{
+.comment,
+.comment a{
   color: #65737E;
+}
+
+.active{
+  color: #37B3E6;
 }
 
 }
@@ -291,4 +321,123 @@ ul{
 
 .classes_list{
   margin-bottom: 30px
+}
+
+
+.divider{
+  background: rgba(0,0,0,.1);
+  position: relative;
+  display: block;
+  float: left;
+  width: 100%;
+  height: 1px;
+  margin: 16px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+.table {
+    width: 100%;
+    height: auto;
+    float: left;
+    border: 1px solid #d3def5;
+    border-radius: 3px;
+    display: block;
+    overflow: hidden;
+
+    .row .col{  
+      width: 49%;
+      float: left;
+       font-size: 14px;
+        font-weight: 300;
+      padding: 0 8px ;
+      &:first-child{
+        border-right: 1px solid #d3def5;
+        text-align: center;
+       font-family: 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+      
+      }
+    }
+}
+.table header {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d3def5;
+    background: linear-gradient(to bottom, #fff, lighten(#24B0DE, 45%));
+    height: 55.0px;
+    line-height: 55.0px
+}
+.table header h3 {
+    padding: 0;
+    margin: 0;
+    line-height: 55.0px !important
+}
+.table .table-rows {
+    float: left;
+    width: 100%
+}
+.table .row {
+    float: left;
+    width: 100%;
+    height: 33px;
+    padding: 0 16px;
+    line-height: 33px;
+    display: table-row;
+    text-align: left;
+    overflow: hidden;
+    font-weight: bold
+}
+.table .row a {
+    color: #c6d4f2;
+    padding-left: 8px
+}
+.table .row:hover a {
+    color: #2592ef
+}
+.table .row:not(:last-child) {
+    border-bottom: 1px solid #d3def5
+}
+.table .row:nth-child(even) {
+    background: #fff
+}
+
+#filterList{
+
+  &:target{
+    animation: here 1s ease-out;
+  }
+
+  padding: 0;
+  margin:  0;
+  display: block;
+  float: left;
+  width: 100%;
+  list-style: none;
+  height: auto;
+  
+  li{
+    padding: 0 4px;
+    margin: 2px 4px;
+    float: left;
+    width: auto;
+    font-family: 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier, monospace;
+    border: 1px solid rgba(black, .1);
+
+    &:hover{
+      background: rgba(black, .1);
+      cursor: pointer;
+      
+    }
+  }
+}
+
+@keyframes here {
+  0%{
+    background: yellow;
+  }
+  50%{
+    background: inherit
+  }
 }

@@ -1,12 +1,15 @@
 /// GRID
 
-  @mixin log(){
-    content:'.'attr(class);position: absolute;
-    top: 0;left: 0;z-index: 99999999;padding: .1em;background: rgba(0,0,0, .9);
-    opacity: .1;
-    color: #fff !important;
-    font-size: 14px;
-  }
+$path-to-svg: '../css';
+
+@mixin log(){
+  content:'.'attr(class);position: absolute;
+  top: 0;left: 0;z-index: 99999999;padding: .1em;background: rgba(0,0,0, .9);
+  opacity: .1;
+  color: #fff !important;
+  font-size: 14px;
+}
+
 @mixin grid(){
 
 
@@ -187,13 +190,13 @@
   }
   @else if $grayscale == true and $cbFilter != false {
     html body{
-      filter: url('../css/filters.svg##{$cbFilter}') grayscale(0) !important;
+      filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}') grayscale(0) !important;
     }
   }
   
   @else if $grayscale == false and $cbFilter != false{
     html body{
-      filter: url('../css/filters.svg##{$cbFilter}') grayscale(0) !important;
+      filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}') grayscale(0) !important;
     }
   }
   

@@ -17,15 +17,15 @@
       </div>
     </header>
 
-    <div class="introduction">
+   
+
+    <div class="content">
+      <div class="introduction">
       <div class="panel">
         <p>This mixin will allow you to get an overview of all the zones of your layout, get a grascaled version to check the contrast, as well as 8 different filters to emulate the most common coloblindness types</p>
          <p>Find it on <a href="https://github.com/LukyVj/accecss/">Github</a>!</p>
       </div>
     </div>
-
-    <div class="content">
-     
      <div class="content_api panel">
         <header>
         <h3>Simple API</h3>
@@ -35,22 +35,109 @@
           <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">false</span><span class="coma">,</span> <span class="param">false</span><span class="coma"> ,</span> <span class="param">false</span><span class="coma"> ,</span> <span class="param">false</span><span class="mixin"> )</span><span class="coma">;</span>
 <span class="comment">                   <strong>^       ^        ^        ^</strong></span>
 <span class="comment">           selector <strong>| </strong>css zones <strong>| </strong>grayscale<strong> | </strong>colorblind filter</span></code></pre>
+
+      <span class="divider"></span>
+       <div class="table">
+        <header><h3>API parameters</h3></header>
+
+        <div class="table-rows">
+          <div class="row"><div class="col">selector</div><div class="col"> You must use quotes (<code>'</code>), <code> '.selector'</code> </div></div>
+          <div class="row"><div class="col">CSS Zones</div><div class="col"> Can be <code>true</code> or <code>false</code></div></div>
+          <div class="row"><div class="col">Grayscale</div><div class="col"> Can be <code>true</code> or <code>false</code></div></div>
+          <div class="row"><div class="col">Colorblind filter</div><div class="col"> Can be any of the filters on the list below, <code>deuteranopia</code></div></div>
+        </div>
+      </div>
+      <span class="divider"></span>
+      <h4>Filters list</h4>
+        <ul id="filterList">
+          <li>protanopia</li>
+          <li>protanomaly</li>
+          <li>deuteranopia</li>
+          <li>deuteranomaly</li>
+          <li>tritanopia</li>
+          <li>tritanomaly</li>
+          <li>achromatopsia</li>
+          <li>achromatomaly</li>
+        </ul>
+      </div>
+
+     
       </section>
 
-     </div>
 
 
-     <!-- <div class="howto panel">
+     <div class="howto panel">
         <header>
         <h3>How to use it</h3>
       </header>
       <section>
-      <p>What we can call "The API" is the few parameters you will be able to change or combine to use the AcceCSS mixin, it's composed of 4 paramters so far</p>
+      <h4>1 - Download</h4>
+      <p>First, go on <a href="https://github.com/LukyVj/accecss">Github</a>, and download the <a href="https://github.com/LukyVj/accecss/blob/gh-pages/css/accecss.scss">accecss.scss</a> file along with the <a href="https://github.com/LukyVj/accecss/blob/gh-pages/css/filters.svg">filter.svg</a></p>
+
+      <span class="divider"></span>
+
+      <h4>2 - @import</h4>
+      <p>Now, you have to import the mixin into your main stylesheet.</p>
+      <p>To keep things clear, I recommand using a <strong>main.scss</strong> file, and import both your <strong>styles</strong> and <strong>accecss</strong> mixin into it</p>
+
+      <pre class="code-sample full-width"><code><span class="at-rule">@import</span> <span class="coma">'</span><span class="param">style.scss</span><span class="coma">';</span>
+<span class="at-rule">@import</span> <span class="coma">'</span><span class="param">accecss.scss</span><span class="coma">';</span>
+</code></pre>
+
+      <span class="divider"></span>
+
+      <h4>3 - Use it</h4>
+      <p>Once <strong><a href="#one">1</a></strong> & <strong><a href="#two">2</a></strong> are down, you're ready to use the mixin, here is how looks an inactive Accecss mixin, note that by default, all the settings are set to false</p>
+
+      <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
+  <span class="param">false</span><span class="coma">,</span>  <span class="comment">// ELEMENT       | False</span>
+  <span class="param">false</span><span class="coma">,</span>  <span class="comment">// CSS ZONE      | False</span>
+  <span class="param">false</span><span class="coma">,</span>  <span class="comment">// GRAYSCALE     | False</span>
+  <span class="param">false</span>   <span class="comment">// COLORBLIND    | False</span>
+<span class="mixin">)</span><span class="coma">;</span>
+</code></pre>
+
+      <span class="divider"></span>
+
+  <p>Let's say you want to debug your whole document, and, for example, let's say you want to get your elements outlined</p>
+  <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
+  <span class="active">'html body'</span><span class="coma">,</span>  
+  <span class="active">true</span><span class="coma">,</span>
+  <span class="param">false</span><span class="coma">,</span>  
+  <span class="param">false</span>   
+<span class="mixin">)</span><span class="coma">;</span>
+</code></pre>
+
+      <span class="divider"></span>
+
+  <p>To add a grayscaled effect : </p>
+  <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
+  <span class="active">'html body'</span><span class="coma">,</span>  
+  <span class="param">false</span><span class="coma">,</span>
+  <span class="active">true</span><span class="coma">,</span>  
+  <span class="param">false</span>   
+<span class="mixin">)</span><span class="coma">;</span>
+</code></pre>
+
+      <span class="divider"></span>
+
+ <p>And finally, add a blindness color filter : </p>
+  <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
+  <span class="active">'html body'</span><span class="coma">,</span>  
+  <span class="param">false</span><span class="coma">,</span>
+  <span class="param">false</span><span class="coma">,</span>  
+  <span class="active">protanopia</span> <span class="comment">// You can use all <a href="#filterList">filters listed over</a></span>
+<span class="mixin">)</span><span class="coma">;</span>
+</code></pre>
+
+<div class="warning">
+  <p>You will have to give the proper path to your <strong>filter.svg</strong>, for this, use the <code>$path-to-filter</code> variable, in the <strong>accecss.scss</strong> file.</p>
+</div>
           
       </section>
 
      </div>
- -->
+
       <div class="content_demos panel">
 
       <header>
@@ -99,6 +186,7 @@
 
 
 
+
      <div class="content_api panel">
         <header>
         <h3>Question ?</h3>
@@ -110,14 +198,6 @@
      </div>
     </div> <!--  ENDOF content -->
 
-
-    <div>
-
-      <pre><code>
-
-      </code></pre>
-
-    </div>
   </main>
 
   <script src="scripts/main.js"></script>
