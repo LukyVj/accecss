@@ -417,6 +417,11 @@ ul li img {
   -webkit-filter: url("#goo");
   filter: url("#goo");
 }
+@media all and (max-width: 765px) {
+  .menu {
+    display: none !important;
+  }
+}
 .menu:hover #openMenu:before {
   box-shadow: 0 -10px 0 #fff, 0  10px 0 #fff;
 }
