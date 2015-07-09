@@ -19,16 +19,31 @@
       </div>
     </header>
 
-   
 
     <div class="content">
+
+       <!-- DAT MENU THO -->
+    
+    <div class="menu">
+      <span id="openMenu"></span>
+      <ul>
+        <li><a href="#api">API</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#infos">Infos</a></li>
+        <li><a href="#questions">?</a></li>
+      </ul>
+    </div>
+
+   <!-- /ENDOF -->
+
       <div class="introduction">
       <div class="panel">
         <p>This mixin will allow you to get an overview of all the zones of your layout, get a grascaled version to check the contrast, as well as 8 different filters to emulate the most common coloblindness types</p>
          <p>Find it on <a href="https://github.com/LukyVj/accecss/">Github</a>!</p>
       </div>
     </div>
-     <div class="content_api panel">
+     <div class="content_api panel" id="api">
         <header>
         <h3>Simple API</h3>
       </header>
@@ -68,7 +83,7 @@
 
 
 
-     <div class="howto panel">
+     <div class="howto panel" id="usage">
         <header>
         <h3>How to use it</h3>
       </header>
@@ -140,7 +155,7 @@
 
      </div>
 
-      <div class="content_demos panel">
+      <div class="content_demos panel" id="demo">
 
       <header>
         <h3>Demos :</h3>
@@ -186,10 +201,25 @@
 
       </div>
 
+      <div class="content_informations panel" id="infos">
+        <header>
+        <h3>Informations about Colorblindness</h3>
+      </header>
+      <section>
+      <p>This project was born essentially because of this article : </p>
+      <p> <a href="https://medium.com/@aaron10buuren/designing-for-and-with-color-blindness-48392aab3d87">https://medium.com/@aaron10buuren/designing-for-and-with-color-blindness-48392aab3d87</a></p>
+
+      <span class="divider"></span>
+      <p>After some researches I discovered this information</p>
+      <blockquote>Colour (color) blindness (colour vision deficiency, or CVD) affects approximately 1 in 12 men (8%) and 1 in 200 women in the world. In Britain this means that there are approximately 2.7 million colour blind people (about 4.5% of the entire population), most of whom are male.</blockquote>
+      <small>-<a href="#"> Source (http://www.colourblindawareness.org/colour-blindness/)</a></small>
+      
+      </section>
+
+     </div>
 
 
-
-     <div class="content_api panel">
+     <div class="content_question panel" id="questions">
         <header>
         <h3>Question ?</h3>
       </header>
@@ -199,162 +229,23 @@
 
      </div>
     </div> <!--  ENDOF content -->
-
+    
+    <footer role="footer">
+      <small>2015   -    <a href="http://twitter.com/LukyVj">@LukyVj</a>   -    <a href="http://github.com/lukyvj/accecss">github</a></small>
+      <br/>
+      <small>For a better, more open & accessible web</small>
+    </footer>
   </main>
-
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <defs>
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </defs>
+</svg>
   <script src="scripts/main.js"></script>
 
 </body>
 </html>
-
-
-
-<!-- 
-
-
-/// DEBUG
-/// Use it to debug your styles, it will add non obstrusive debugging lines
-/// @param  {Value} $zones [false]        - Adds zones in css
-/// @param  {Value} $colorBlind [false]   - Adds a grayscaled layer to debug for colorblind people
-/// @param  {Value} $cbFilter [false]     - Adds a filtered layer over the app, corresponding to a certain color blind category
-/// @param  {Value} $element [false]      - Give the name of the element you want to debug
-///
-/// Available filters : `Protanopia`, `Protanomaly`, `Deuteranopia`, `Deuteranomaly`, `Tritanopia`, `Tritanomaly`, `Achromatopsia`, `Achromatomaly`
-///
-/// 
-/// Usage : 
-/// `@include debug(<true:false>, <true:false>, <false:filterName>);` 
-///
-/// @group helpers
-@mixin debug($zones: false, $colorBlind: false, $cbFilter: false, $element: false){
-
-  @if $colorBlind == true and $element == false{
-    html body{
-      filter: grayscale(100%);
-    }
-  }
-  
-  @else if $colorBlind == false and $cbFilter != false{
-    html body{
-      filter: url('../css/filters.svg##{$cbFilter}') !important;
-    }
-  }
-  
-
-  @if $zones == true and $element == false {
-/*
-  CSS Debug : TRUE
-*/
-    *{
-      box-shadow: inset 0 0 0 1px rgba(red, .1);
-      &:hover{
-        box-shadow: inset 0 0 0 1px rgba(red, 1);
-      }
-      + *{
-        box-shadow: inset 0 0 0 1px rgba(blue, .1);
-        &:hover{
-          box-shadow: inset 0 0 0 1px rgba(blue, 1);
-        }
-        + *{
-          box-shadow: inset 0 0 0 1px rgba(green, .1);
-          &:hover{
-            box-shadow: inset 0 0 0 1px rgba(green, 1);
-          }
-          + *{
-            box-shadow: inset 0 0 0 1px rgba(red, .1);
-            &:hover{
-              box-shadow: inset 0 0 0 1px rgba(red, 1);
-            }
-            + *{
-              box-shadow: inset 0 0 0 1px rgba(blue, .1);
-              &:hover{
-                box-shadow: inset 0 0 0 1px rgba(blue, 1);
-              }
-              +  *{
-                box-shadow: inset 0 0 0 1px rgba(green, .1);
-                &:hover{
-                  box-shadow: inset 0 0 0 1px rgba(green, 1);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  
-  // If given $element 
-  @if $element != false {
-     @if $colorBlind == true{
-    #{$element} {
-      filter: grayscale(100%);
-    }
-  }
-  
-  @else if $colorBlind == false and $cbFilter != false{
-    #{$element} {
-      filter: url('../css/filters.svg##{$cbFilter}') !important;
-    }
-  }
-  
-
-  @if $zones == true{
-    #{$element}{
-      *{
-        box-shadow: inset 0 0 0 1px rgba(red, .1);
-        &:hover{
-          box-shadow: inset 0 0 0 1px rgba(red, 1);
-        }
-          + *{
-            box-shadow: inset 0 0 0 1px rgba(blue, .1);
-            &:hover{
-              box-shadow: inset 0 0 0 1px rgba(blue, 1);
-            }
-            + *{
-              box-shadow: inset 0 0 0 1px rgba(green, .1);
-              &:hover{
-                box-shadow: inset 0 0 0 1px rgba(green, 1);
-              }
-              + *{
-                box-shadow: inset 0 0 0 1px rgba(red, .1);
-                &:hover{
-                  box-shadow: inset 0 0 0 1px rgba(red, 1);
-                }
-                + *{
-                  box-shadow: inset 0 0 0 1px rgba(blue, .1);
-                  &:hover{
-                    box-shadow: inset 0 0 0 1px rgba(blue, 1);
-                  }
-                  +  *{
-                    box-shadow: inset 0 0 0 1px rgba(green, .1);
-                    &:hover{
-                      box-shadow: inset 0 0 0 1px rgba(green, 1);
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  
-
-  @else{
-/*
-   CSS Debug : FALSE
-*/
-  }
-}
-
-// Mixin debug
-// @include debug(&lt;true:false&gt;, &lt;true:false&gt;, &lt;false:filterName&gt;, &lt;false:elementName&gt;); 
-// Param : 
-//        [1]: css zone
-//        [2]: Grayscale view
-//        [3]: Colorblind filters 
-//        [4]: Specified debug element
-
-
- -->
