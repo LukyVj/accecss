@@ -1,2 +1,2 @@
 # AcceCSS
-AcceCSS A SASS Mixin That debug &amp; check the accessibility of your designs
+AcceCSS A Sass Mixin That debug &amp; check the accessibility of your designs
