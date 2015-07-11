@@ -100,7 +100,8 @@ body{
  @each $num, $type in $type-map {
      &.zones.colorblind#{$num},
      &.colorblind#{$num}{
-      filter: url("../css/filters.svg##{$type}") grayscale(0) !important;
+      -moz-filter: url("../css/filters.svg##{$type}") grayscale(0) !important;
+      filter: url("css/filters.svg##{$type}") grayscale(0) !important;
     }
   }
 }
