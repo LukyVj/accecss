@@ -16,7 +16,7 @@
     <header role="header">
       <div class="align">
         <h1>Acce<span>CSS</span></h1>
-        <h2>A SASS Mixin</h2>
+        <h2>A Sass Mixin</h2>
         <h3>That debugs & checks the accessibility of your designs</h3>
       </div>
     </header>
@@ -25,7 +25,7 @@
     <div class="content">
 
        <!-- DAT MENU THO -->
-    
+
     <div class="menu">
       <span id="openMenu"></span>
       <ul>
@@ -88,19 +88,19 @@
             <img src="dist/images/chrome-icon.svg" />
             Google Chrome</a>
           </li>
-          
+
           <li>
             <a href="http://caniuse.com/#feat=svg-filters">
             <img src="dist/images/safari-icon.svg" />
             Safari</a>
           </li>
-          
+
           <li>
             <a href="http://caniuse.com/#feat=svg-filters">
             <img src="dist/images/firefox-icon.svg" />
             Mozilla Firefox</a>
           </li>
-          
+
           <li>
             <a href="http://caniuse.com/#feat=svg-filters">
             <img src="dist/images/ie-icon.svg" />
@@ -109,7 +109,7 @@
         </
         ul>
       </div>
-     
+
       </section>
 
 
@@ -149,10 +149,10 @@
 
   <p>Let's say you want to debug your whole document, and, for example, let's say you want to get your elements outlined</p>
   <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
-  <span class="active">'html body'</span><span class="coma">,</span>  
+  <span class="active">'html body'</span><span class="coma">,</span>
   <span class="active">true</span><span class="coma">,</span>
-  <span class="param">false</span><span class="coma">,</span>  
-  <span class="param">false</span>   
+  <span class="param">false</span><span class="coma">,</span>
+  <span class="param">false</span>
 <span class="mixin">)</span><span class="coma">;</span>
 </code></pre>
 
@@ -160,10 +160,10 @@
 
   <p>To add a grayscaled effect : </p>
   <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
-  <span class="active">'html body'</span><span class="coma">,</span>  
+  <span class="active">'html body'</span><span class="coma">,</span>
   <span class="param">false</span><span class="coma">,</span>
-  <span class="active">true</span><span class="coma">,</span>  
-  <span class="param">false</span>   
+  <span class="active">true</span><span class="coma">,</span>
+  <span class="param">false</span>
 <span class="mixin">)</span><span class="coma">;</span>
 </code></pre>
 
@@ -171,9 +171,9 @@
 
  <p>And finally, add a blindness color filter : </p>
   <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
-  <span class="active">'html body'</span><span class="coma">,</span>  
+  <span class="active">'html body'</span><span class="coma">,</span>
   <span class="param">false</span><span class="coma">,</span>
-  <span class="param">false</span><span class="coma">,</span>  
+  <span class="param">false</span><span class="coma">,</span>
   <span class="active">protanopia</span> <span class="comment">// You can use all <a href="#filterList">filters listed over</a></span>
 <span class="mixin">)</span><span class="coma">;</span>
 </code></pre>
@@ -181,7 +181,7 @@
 <div class="warning">
   <p>You will have to give the proper path to your <strong>filter.svg</strong>, for this, use the <code>$path-to-filter</code> variable, in the <strong>accecss.scss</strong> file.</p>
 </div>
-          
+
       </section>
 
      </div>
@@ -191,7 +191,7 @@
       <header>
         <h3>Demos :</h3>
       </header>
-      
+
       <div class="classes_list">
         <div class="row">
           <h4>Outlining :</h4>
@@ -213,7 +213,7 @@
           <a href="javascript:void(0)" class="button" id="colorblind8">achromatomaly</a>
         </div>
       </div>
-      
+
       <div>
         <h3>With text</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">foo</a> Repudiandae alias, ex porro eaque explicabo eligendi iusto nulla dolore laboriosam voluptatibus commodi <a href="#">bar</a> quaerat animi, doloribus et quam <a href="#">baz</a> vitae nobis obcaecati. Assumenda.</p>
@@ -227,7 +227,7 @@
           <li><img src="http://thecatapi.com/api/images/get?format=src&type=png"></li>
           <li><img src="http://thecatapi.com/api/images/get?format=src&type=jpg"></li>
           <li><img src="http://thecatapi.com/api/images/get?format=src&type=gif"></li>
-        </ul>            
+        </ul>
       </div>
 
       </div>
@@ -244,7 +244,7 @@
       <p>After some researches I discovered this information :</p>
       <blockquote>Colour (color) blindness (colour vision deficiency, or CVD) affects approximately <strong>1 in 12 men</strong> (<strong>8%</strong>) and <strong>1 in 200 women</strong> in the world. In Britain this means that there are approximately 2.7 million colour blind people (about 4.5% of the entire population), most of whom are male.</blockquote>
       <small>-<a href="#"> Source (http://www.colourblindawareness.org/colour-blindness/)</a></small>
-      
+
       </section>
      </div>
 
@@ -261,16 +261,16 @@
     </div> <!--  ENDOF content -->
 
     <div class="share">
-     <a href="https://twitter.com/home?status=AcceCSS+-+A+SASS+mixin+That+debugs+%26+checks+the+accessibility+of+your+designs+http%3A%2F%2Flukyvj.github.io%2Faccecss%2F+via+%40lukyvj"><img src="dist/images/twitter-icon.svg" alt=""></a>
+     <a href="https://twitter.com/home?status=AcceCSS+-+A+Sass+mixin+That+debugs+%26+checks+the+accessibility+of+your+designs+http%3A%2F%2Flukyvj.github.io%2Faccecss%2F+via+%40lukyvj"><img src="dist/images/twitter-icon.svg" alt=""></a>
     </div>
-    
+
     <footer role="footer">
       <small>2015   -    <a href="http://twitter.com/LukyVj">@LukyVj</a>   -    <a href="http://github.com/lukyvj/accecss">github</a></small>
       <br/>
       <small>For a better, more open & accessible web</small>
     </footer>
   </main>
-  
+
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
   <defs>
@@ -282,7 +282,7 @@
   </defs>
 </svg>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg 
+<svg
   xmlns="http://www.w3.org/2000/svg"
   version="1.1">
   <defs>
