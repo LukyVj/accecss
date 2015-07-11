@@ -165,6 +165,7 @@ html, body{
         }
         
         z-index: -1;
+
       }
       
 
@@ -213,6 +214,10 @@ html, body{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media all and (max-width: 640px){
+      transform: translate(-50%, -50%) scale(.8);
+  }   
 }
 
 ul{
