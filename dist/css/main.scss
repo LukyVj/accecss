@@ -1,0 +1,106 @@
+@import 'style';
+@import 'accecss.scss';
+
+
+// Mixin debug
+// @include debug(<true:false>, <true:false>, <false:filterName>, <false:elementName>); 
+// Param : 
+//        [1]: Specified debug element
+//        [2]: css zone
+//        [3]: Grayscale view
+//        [4]: Colorblind filters **
+//
+// ** Available filters : `protanopia`, `protanomaly`, `deuteranopia`, `deuteranomaly`, `tritanopia`, `tritanomaly`, `achromatopsia`, `achromatomaly`
+
+// Mixin setting  Value   ------------------    Default value 
+@include accecss(
+  false,      // ELEMENT      | False
+  false,      // CSS ZONE      | False
+  false,     // GRAYSCALE     | False
+  false     // COLORBLIND    | False
+);
+
+
+
+
+$type-map: (
+  1: 'protanopia' ,
+  2: 'protanomaly' ,
+  3: 'deuteranopia' ,
+  4: 'deuteranomaly' ,
+  5: 'tritanopia' ,
+  6: 'tritanomaly' ,
+  7: 'achromatopsia' ,
+  8: 'achromatomaly' 
+);
+ 
+
+ 
+
+
+////// DEMO 
+
+body{
+
+  &.zones{
+     & {
+      box-shadow: inset 0 0 0 1px rgba(128, 0, 128, 0.1) !important;
+    }
+      &:hover {
+      box-shadow: inset 0 0 0 1px purple !important;
+    }
+      & * {
+      box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.1) !important;
+    }
+      & *:hover {
+      box-shadow: inset 0 0 0 1px red !important;
+    }
+      & * + * {
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 255, 0.1) !important;
+    }
+      & * + *:hover {
+      box-shadow: inset 0 0 0 1px blue !important;
+    }
+      & * + * + * {
+      box-shadow: inset 0 0 0 1px rgba(0, 128, 0, 0.1) !important;
+    }
+      & * + * + *:hover {
+      box-shadow: inset 0 0 0 1px green !important;
+    }
+      & * + * + * + * {
+      box-shadow: inset 0 0 0 1px rgba(128, 0, 128, 0.1) !important;
+    }
+      & * + * + * + *:hover {
+      box-shadow: inset 0 0 0 1px purple !important;
+    }
+      & * + * + * + * + * {
+      box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.1) !important;
+    }
+      & * + * + * + * + *:hover {
+      box-shadow: inset 0 0 0 1px red !important;
+    }
+      & * + * + * + * + * + * {
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 255, 0.1) !important;
+    }
+      & * + * + * + * + * + *:hover {
+      box-shadow: inset 0 0 0 1px blue !important;
+    }
+      & * + * + * + * + * + * + * {
+      box-shadow: inset 0 0 0 1px rgba(0, 128, 0, 0.1) !important;
+    }
+      & * + * + * + * + * + * + *:hover {
+      box-shadow: inset 0 0 0 1px green !important;
+    }
+  }
+  &.zones.grayscale,
+  &.grayscale{
+    filter: grayscale(100%);
+  }
+ 
+ @each $num, $type in $type-map {
+     &.zones.colorblind#{$num},
+     &.colorblind#{$num}{
+      filter: url("../css/filters.svg##{$type}") grayscale(0) !important;
+    }
+  }
+}
