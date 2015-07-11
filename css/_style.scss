@@ -17,6 +17,10 @@
 *{
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+
+  &:target{
+    animation: here 1s ease-out;
+  }
 }
 :root{
   font-size: 16px;
@@ -31,11 +35,29 @@ body{
   padding: 0;
   margin: 0;
   height: auto;
+  text-align: center;
+  max-width: 90%;
+  margin: 0 5% 1em;
+  float: left;
+  
+  display: block;
+  
 
   li{
     display: inline-block;
     width: auto;
-    margin: 0 .2em;
+    margin: 0 0;
+    width: 25%;
+
+
+    img{
+      display: block;
+      max-width: 100%;
+      width: 65%;
+      float: none;
+      margin: auto;
+      clear: both;
+    }
   }
 }
 html, body{
@@ -532,6 +554,7 @@ ul{
   top: 490px;
   float: left;
   filter:url('../css/goo.svg#goo');
+  filter:url('../css/goo.svg#goo');
 
   @media all and (max-width: 765px){
     display: none !important;
@@ -678,5 +701,26 @@ footer{
     &:hover{
       border-bottom: 1px dotted #fff;
     }
+  }
+}
+
+.share{
+  width: 100%;
+  margin: 0 auto;
+  float: left;
+  height: 100px;
+  float: left;
+  line-height: 0;
+  text-align: center;
+  margin-top: -60px;
+  a{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    border-bottom: none !important;
+  }
+  img{
+    max-width: 80px;
+    margin-top: -10px;
   }
 }
