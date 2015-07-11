@@ -474,7 +474,7 @@ ul{
   right: -78px;
   top: 490px;
   float: left;
-  filter:url('#goo');
+  filter:url('../css/goo.svg#goo');
 
   @media all and (max-width: 765px){
     display: none !important;
