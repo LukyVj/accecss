@@ -241,7 +241,7 @@ ul li img {
   margin: 0;
 }
 
-.content_informations.panel section p {
+.content_informations.panel section p:nth-child(2) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
