@@ -25,7 +25,7 @@ The AcceCSS mixin will work in any major evergreen brother :
 ## How to use it
 
 ### 1 - Download
-First, go on Github, and download the accecss.scss file along with the filter.svg
+First, go on Github, and download the [accecss.scss](https://github.com/LukyVj/accecss/blob/gh-pages/css/accecss.scss) file along with the [filter.svg](https://github.com/LukyVj/accecss/blob/gh-pages/css/filters.svg)
 
 ### 2 - @import
 Now, you have to import the mixin into your main stylesheet.
@@ -77,19 +77,20 @@ And finally, add a blindness color filter :
 );
 ```
 
-*You will have to give the proper path to your filter.svg, for this, use the $path-to-filter variable, in the accecss.scss file.*
+__You will have to give the proper path to your filter.svg, for this, use the $path-to-filter variable, in the accecss.scss file.__
 
 
 ## Informations about Colorblindness
 
 This project was born essentially because of this article :
-https://medium.com/@aaron10buuren/designing-for-and-with-color-blindness-48392aab3d87
+
+[Designing For (and With) Color Blindness](https://medium.com/@aaron10buuren/designing-for-and-with-color-blindness-48392aab3d87)
 
 After some researches I discovered this information :
-    
-    Colour (color) blindness (colour vision deficiency, or CVD) affects approximately 1 in 12 men (8%) and 1 in 200 women in the world. In Britain this means that there are approximately 2.7 million colour blind people (about 4.5% of the entire population), most of whom are male.
-    - Source (http://www.colourblindawareness.org/colour-blindness/)
+
+_Colour (color) blindness (colour vision deficiency, or CVD) affects approximately 1 in 12 men (8%) and 1 in 200 women in the world. In Britain this means that there are approximately 2.7 million colour blind people (about 4.5% of the entire population), most of whom are male._
+- Source (http://www.colourblindawareness.org/colour-blindness/)_
 
 ## Question ?
 
-For any further informations, feel free to ping me on twitter : @LukyVj
+For any further informations, feel free to ping me on twitter : [@LukyVj](http://twitter.com/lukyvj)
