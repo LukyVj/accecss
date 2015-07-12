@@ -28,6 +28,8 @@ The AcceCSS mixin will work in any major evergreen brother :
 - Mozilla Firefox
 - IE (partial)
 
+*For more informations, see [Caniuse : SVG filters](http://caniuse.com/#feat=svg-filters)*
+
 ## How to use it
 
 ### 1 - Download
