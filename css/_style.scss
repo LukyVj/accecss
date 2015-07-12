@@ -301,6 +301,11 @@ ul{
   }
 }
 
+.content_informations.panel section p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 // MD shadows
 
