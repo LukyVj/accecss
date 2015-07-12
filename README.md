@@ -1,6 +1,3 @@
-<header role="header">
-
-<div class="align">
 
 # Acce<span>CSS</span>
 
