@@ -85,7 +85,7 @@ And finally, add a blindness color filter :
 );
 ```
 
-__You will have to give the proper path to your filter.svg, for this, use the $path-to-filter variable, in the accecss.scss file.__
+__You will have to give the proper path to your filter.svg, for this, use the `$path-to-filter` variable, in the accecss.scss file.__
 
 
 ## Informations about Colorblindness
