@@ -1,4 +1,5 @@
-# AcceCSS - A Sass Mixin that debugs & checks the accessibility of your designs
+# AcceCSS
+## A Sass Mixin that debugs & checks the accessibility of your designs
 
 This mixin will allow you to get an overview of all the zones of your layout, get a grayscaled version to check the contrast, as well as 8 different filters to emulate the most common coloblindness types
 
@@ -13,7 +14,12 @@ What we can call "The API" is the few parameters you will be able to change or c
 ``` 
 
 ## API PARAMETERS
-selectorYou must use quotes ('), ex: '.selector' CSS ZonesCan be true or falseGrayscaleCan be true or falseColorblind filterAny of the filters on the list below, ex: deuteranopia
+| PARAMETER | POSSIBLE VALUE |
+|--------------|:------------:|
+| selector | You must use quotes ('), ex: '.selector' | 
+| CSS Zones | Can be true or false | 
+| Grayscale | Can be true or false | 
+| Colorblind filter | Any of the filters on the list below, ex: deuteranopia| 
 
 ## Browser compatibility
 The AcceCSS mixin will work in any major evergreen brother :
