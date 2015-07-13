@@ -540,6 +540,7 @@ ul li img {
 }
 .menu:hover ul li a {
   color: #fff;
+  font-size: .9em;
 }
 .menu:hover ul li:nth-child(1) {
   -webkit-transform: translateY(55px);
@@ -565,6 +566,11 @@ ul li img {
   -webkit-transform: translateY(275px);
   -ms-transform: translateY(275px);
   transform: translateY(275px);
+}
+.menu:hover ul li:nth-child(6) {
+  -webkit-transform: translateY(330px);
+  -ms-transform: translateY(330px);
+  transform: translateY(330px);
 }
 .menu:hover #openMenu {
   -webkit-box-shadow: none;
@@ -683,6 +689,20 @@ footer a {
 }
 footer a:hover {
   border-bottom: 1px dotted #fff;
+}
+
+#thankyou p {
+  display: inline-block;
+  padding-left: 36px;
+}
+#thankyou p:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: url(../images/star-icon.svg) no-repeat center center/contain;
+  margin: 0px -36px;
 }
 
 .share {
