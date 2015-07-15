@@ -99,6 +99,11 @@ After some researches I discovered this information :
 _Colour (color) blindness (colour vision deficiency, or CVD) affects approximately 1 in 12 men (8%) and 1 in 200 women in the world. In Britain this means that there are approximately 2.7 million colour blind people (about 4.5% of the entire population), most of whom are male._
 - Source (http://www.colourblindawareness.org/colour-blindness/)_
 
+## Thank you 
+ - A big thank you to [@dervondenbergen](http://twitter.com/dervondenbergen) for his precious help, and his advices.
+ - Thank you to [@bullgit](http://twitter.com/bullgit) for being awesome and provide me priceless feedbacks.
+ - A huge thank you to [thecatapi.com](http://thecatapi.com), for the awesome.. Cat API!
+ 
 ## Question ?
 
 For any further informations, feel free to ping me on twitter : [@LukyVj](http://twitter.com/lukyvj)
