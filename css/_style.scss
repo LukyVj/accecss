@@ -768,10 +768,10 @@ footer{
     }
 
     &:hover {
-      transform: scale(.9);
+      transform: scale(.9) translateY(-5px);
 
       &:after {
-        transform: translateY(5px) translateX(-50%) scale(1.1);
+        transform: translateY(0) translateX(-50%) scale(1.1);
         opacity: 1;
       }
     }

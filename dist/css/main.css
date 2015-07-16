@@ -742,14 +742,14 @@ footer a:hover {
   left: 50%;
 }
 .share a:hover {
-  -webkit-transform: scale(0.9);
-  -ms-transform: scale(0.9);
-  transform: scale(0.9);
+  -webkit-transform: scale(0.9) translateY(-5px);
+  -ms-transform: scale(0.9) translateY(-5px);
+  transform: scale(0.9) translateY(-5px);
 }
 .share a:hover:after {
-  -webkit-transform: translateY(5px) translateX(-50%) scale(1.1);
-  -ms-transform: translateY(5px) translateX(-50%) scale(1.1);
-  transform: translateY(5px) translateX(-50%) scale(1.1);
+  -webkit-transform: translateY(0) translateX(-50%) scale(1.1);
+  -ms-transform: translateY(0) translateX(-50%) scale(1.1);
+  transform: translateY(0) translateX(-50%) scale(1.1);
   opacity: 1;
 }
 .share img {
