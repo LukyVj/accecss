@@ -234,11 +234,13 @@ ul li img {
   padding: 0;
   margin-top: 0;
   color: #2EB2E8;
+  clear: both;
 }
 .panel h4 {
   color: #C2C2C2;
   padding: 0;
   margin: 0;
+  clear: both;
 }
 
 .content_informations.panel section p:nth-child(2) {
@@ -720,10 +722,97 @@ footer a:hover {
   padding: 0;
   margin: 0;
   border-bottom: none !important;
+  position: relative;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+}
+.share a:after {
+  position: absolute;
+  display: block;
+  content: 'Spread the word';
+  -webkit-transform: translateY(-20px) translateX(-50%);
+  -ms-transform: translateY(-20px) translateX(-50%);
+  transform: translateY(-20px) translateX(-50%);
+  color: #55ACEE;
+  opacity: 0;
+  -webkit-transition: -webkit-transform .3s ease, opacity .3s ease;
+  transition: transform .3s ease, opacity .3s ease;
+  width: 200px;
+  text-align: center;
+  left: 50%;
+}
+.share a:hover {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+}
+.share a:hover:after {
+  -webkit-transform: translateY(5px) translateX(-50%) scale(1.1);
+  -ms-transform: translateY(5px) translateX(-50%) scale(1.1);
+  transform: translateY(5px) translateX(-50%) scale(1.1);
+  opacity: 1;
 }
 .share img {
   max-width: 80px;
   margin-top: -10px;
+}
+
+iframe[src*="ghbtns"] {
+  width: auto;
+  display: block;
+  float: left;
+  width: 140px;
+}
+@media all and (max-width: 480px) {
+  iframe[src*="ghbtns"] {
+    width: 25%;
+  }
+}
+
+ul.github-tracker {
+  border: 1px solid #eee;
+  width: 100%;
+  float: left;
+  height: auto;
+  border-radius: 3px;
+  margin-top: 8px;
+}
+ul.github-tracker li {
+  width: 100%;
+  cursor: pointer;
+  padding: 0 8px;
+}
+ul.github-tracker li:nth-child(odd) {
+  background: #F5F5F5;
+}
+ul.github-tracker li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+ul.github-tracker li:hover {
+  background: #ffe;
+  -webkit-box-shadow: inset 3px 0 0 #eee;
+  box-shadow: inset 3px 0 0 #eee;
+}
+
+#commits {
+  font-size: .9rem;
+}
+#commits .commit {
+  font-family: "courier", serif;
+  color: #4078c0;
+  border-bottom: none;
+}
+#commits .date {
+  font-family: "courier", serif;
+  float: right;
+  font-style: 12px;
+}
+#commits .author {
+  font-weight: bold;
+}
+#commits .message,
+#commits .author {
+  color: #4e575b;
 }
 
 /*

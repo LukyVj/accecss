@@ -292,12 +292,14 @@ ul{
     padding: 0;
     margin-top: 0;
     color: #2EB2E8;
+    clear: both;
   }
 
   h4{
     color: #C2C2C2;
     padding: 0;
     margin: 0;
+    clear: both;
   }
 }
 
@@ -742,14 +744,107 @@ footer{
   line-height: 0;
   text-align: center;
   margin-top: -60px;
-  a{
+ 
+  a {
     display: inline-block;
     padding: 0;
     margin: 0;
     border-bottom: none !important;
+    position: relative;
+    transition: transform .3s ease;
+
+    &:after {
+      position: absolute;
+      display: block;
+      
+      content: 'Spread the word';
+      transform: translateY(-20px) translateX(-50%);
+      color: #55ACEE;
+      opacity: 0;
+      transition: transform .3s ease, opacity .3s ease;
+      width: 200px;
+      text-align: center;
+      left: 50%;
+    }
+
+    &:hover {
+      transform: scale(.9);
+
+      &:after {
+        transform: translateY(5px) translateX(-50%) scale(1.1);
+        opacity: 1;
+      }
+    }
   }
-  img{
+
+  img {
     max-width: 80px;
     margin-top: -10px;
+  }
+}
+
+iframe[src*="ghbtns"]{
+  width: auto;
+  display: block;
+  float: left;
+  width: 140px;
+
+  @media all and (max-width: 480px){
+    width: 25%;
+  }
+}
+
+ul.github-tracker {
+  border: 1px solid #eee;
+  width: 100%;
+  float: left;
+  height: auto;
+  border-radius: 3px;
+  margin-top: 8px;
+
+   li{
+    width: 100%;
+    cursor: pointer;
+    padding: 0 8px;
+
+
+    &:nth-child(odd){
+      background: #F5F5F5;
+    }
+
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+
+
+    &:hover{
+      background: #ffe;
+      box-shadow: inset 3px 0 0 #eee;
+    }
+  }
+}
+
+#commits {
+  font-size: .9rem;
+
+  .commit {
+    font-family: "courier", serif;
+    color: #4078c0;
+    border-bottom: none;
+  }
+  .date{
+    font-family: "courier", serif;
+    float: right;
+    font-style: 12px;
+  }
+
+  .author{
+    font-weight: bold;
+  }
+
+  .message,
+  .author {
+    color: #4e575b;
   }
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-  <meta name="description" content="155 characters of message matching text with a call to action goes here">
+  <meta name="description" content="AcceCSS - A Sass mixin that debugs & checks the accessibility of your designs">
   <link rel="icon" type="image/png" href="dist/images/favicon.png" />
   <link rel="shortcut icon" type="image/png" href="dist/images/favicon.png" />
   <title>AcceCSS</title>
@@ -20,7 +20,7 @@
         <h3>That debugs & checks the accessibility of your designs</h3>
       </div>
     </header>
-
+    
 
     <div class="content">
 
@@ -255,7 +255,7 @@
        </header>
        <p>A big thank you to <a href="http://twitter.com/dervondenbergen">@dervondenbergen</a> for his precious help, and his advices.</p>
        <p>Thank you to <a href="http://bullg.it">@bullgit</a> for being awesome and provide me priceless feedbacks </p>
-       <p>A huge thank you to <a href="http://thecatapi.com/">thecatapi.com/</a>, for the awesome.. Cat API!</p>
+       <p>A huge thank you to <a href="http://thecatapi.com/">thecatapi.com</a>, for the awesome.. Cat API!</p>
 
      </div>
 
@@ -267,6 +267,39 @@
       <p>For any further informations, feel free to ping me on twitter : <a href="http://twitter.com/lukyVj">@LukyVj</a></p>
       </section>
 
+     </div>
+
+
+     <div class="content_github panel" id="github">
+      <header>
+        <h3>Github</h3>
+      </header>
+      <section>
+      <div class="github_actions">
+        
+        <iframe src="https://ghbtns.com/github-btn.html?user=lukyvj&repo=accecss&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+         <iframe src="https://ghbtns.com/github-btn.html?user=lukyvj&repo=accecss&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+         <iframe src="https://ghbtns.com/github-btn.html?user=lukyvj&repo=accecss&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+      </div>
+      
+      <span class="divider"></span>
+
+       <div id="commits">
+        
+        <template v-repeat="b:branches">
+          <h4>Latest Commits on <strong><label for="{{*b}}">accecss@{{currentBranch}}</label></strong></h4>
+        </template>
+        <ul class="github-tracker">
+          <li v-repeat="commits" onclick="window.location='{{html_url}}'">
+            [<a href="{{html_url}}" target="_blank" class="commit">{{sha.slice(0, 7)}}</a>]
+            - <span class="message">{{commit.message | truncate}}</span> | 
+            by <span class="author">{{commit.author.name}}</span>
+            <span class="date">{{commit.author.date | formatDate}}</span>
+          </li>
+        </ul>
+      </div>
+      </section>
+        
      </div>
     </div> <!--  ENDOF content -->
 
@@ -380,6 +413,7 @@
     ga('send', 'pageview');
 
   </script>
+  <script src="scripts/vue.min.js"></script>
   <script src="scripts/main.js"></script>
 
 </body>
