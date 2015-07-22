@@ -291,12 +291,12 @@ ul{
     margin-bottom: 24px;
     padding: 0;
     margin-top: 0;
-    color: darken(#2EB2E8, 5%);
+    color: #2EB2E8;
     clear: both;
   }
 
   h4{
-    color: #C2C2C2;
+    color: darken(#C2C2C2, 5%);
     padding: 0;
     margin: 0;
     clear: both;
@@ -381,7 +381,7 @@ ul{
 }
 
 .param{
-  color: #A3BE8C;
+  color: #CB494B;
 }
 .coma{
   color: #65737E;
