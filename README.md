@@ -1,6 +1,8 @@
 # AcceCSS
 ## A Sass Mixin that debugs & checks the accessibility of your designs
 
+[![Join the chat at https://gitter.im/LukyVj/accecss](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/LukyVj/accecss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This mixin will allow you to get an overview of all the zones of your layout, get a grayscaled version to check the contrast, as well as 8 different filters to emulate the most common coloblindness types
 
 
