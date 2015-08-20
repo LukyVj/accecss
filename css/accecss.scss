@@ -66,7 +66,7 @@ $path-to-filter: '../svg';
 ///
 /// 
 /// Usage : 
-/// `@include accecss(<true:false>, <true:false>, <false:filterName>);` 
+/// `@include accecss(<elementName:false>, <true:false>, <true:false>, <filterName:false>);` 
 ///
 /// @group helpers
 
