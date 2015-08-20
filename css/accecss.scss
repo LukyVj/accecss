@@ -76,9 +76,6 @@ $path-to-filter: '../svg';
     @if $element != false {
       #{$element} {
         filter: grayscale(100%);
-
-
-
       }
     }
 
@@ -91,10 +88,7 @@ $path-to-filter: '../svg';
   @else if $grayscale == true and $cbFilter != false {
     @if $element != false {
       #{$element} {
-
-
         filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}') grayscale(0) !important;
-
       }
     }
 
@@ -108,10 +102,7 @@ $path-to-filter: '../svg';
   @else if $grayscale == false and $cbFilter != false{
     @if $element != false {
       #{$element} {
-
-
         filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}') grayscale(0) !important;
-
       }
     }
 
@@ -125,9 +116,7 @@ $path-to-filter: '../svg';
   @else if $cbFilter != false and $element != false {
     @if $element != false {
       #{$element} {
-
         filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}') grayscale(0) !important;
-
       }
     }
 
@@ -140,9 +129,7 @@ $path-to-filter: '../svg';
 
 
   @else{
-  /*
-  CSS accecss : FALSE
-  */
+    /* CSS accecss : FALSE */
   }
 }
 
