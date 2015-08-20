@@ -1,6 +1,6 @@
 /// GRID
 
-$path-to-svg: '../css';
+$path-to-filter: '../css';
 
 @mixin log(){
   content:'.'attr(class);position: absolute;
