@@ -3,8 +3,6 @@
 $path-to-filter: '../svg';
 
 @mixin grid(){
-
-
   box-shadow: inset 0 0 0 1px rgba(purple, .1) !important;
   &:hover{
     box-shadow: inset 0 0 0 1px rgba(purple, 1) !important;
