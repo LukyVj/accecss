@@ -100,11 +100,6 @@ body{
  @each $num, $type in $type-map {
      &.zones.colorblind#{$num},
      &.colorblind#{$num}{
-      filter: url("css/filters.svg##{$type}") grayscale(0) !important;
-    }
-
-    _:-moz-tree-row(hover), &.zones.colorblind#{$num},
-    _:-moz-tree-row(hover), &.colorblind#{$num} {
       filter: url("../css/filters.svg##{$type}") grayscale(0) !important;
     }
   }

@@ -1,131 +1,80 @@
-// First we detect the click event
-document.getElementById('zones').addEventListener('click', function () {
+function hasClass(el, cls) {
+  return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
+}
 
-  // Using an if statement to check the class
-  if (document.body.classList.contains('zones')) {
-    // The box that we clicked has a class of zones so let's remove it and add the good class
-   document.body.classList.remove('zones');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('zones');
-  }
+var body = document.body;
+var demos = document.querySelectorAll('.classes_list a');
+
+[].forEach.call(demos, function (button) {
+
+  button.addEventListener('click', function () {
+
+    var c = this.getAttribute('id');
+
+    if ( hasClass(body, c)) {
+      body.className = '';
+      deactiveButton(this);
+    } else {
+      body.className = c;
+      deactiveAllButtons();
+      this.className += ' active ';
+    }
+
+  });
+
 });
 
-// First we detect the click event
-document.getElementById('grayscale').addEventListener('click', function () {
+function deactiveAllButtons () {
 
-  // Using an if statement to check the class
-  if (document.body.classList.contains('grayscale')) {
-    // The box that we clicked has a class of grayscale so let's remove it and add the good class
-   document.body.classList.remove('grayscale');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('grayscale');
+  [].forEach.call(demos, function (button) {
+    deactiveButton(button);
+  });
+
+}
+
+function deactiveButton (elem) {
+  elem.className = elem.className.replace(' active ', '');
+}
+
+
+var apiURL = 'https://api.github.com/repos/LukyVj/accecss/commits?per_page=6&sha='
+
+var demo = new Vue({
+
+  el: '#commits',
+
+ data: {
+    branches: ['gh-pages'],
+    currentBranch: 'gh-pages',
+    commits: null
+  },
+
+  created: function () {
+    this.fetchData()
+    this.$watch('currentBranch', function () {
+      this.fetchData()
+    })
+  },
+
+  filters: {
+    truncate: function (v) {
+      var newline = v.indexOf('\n')
+      return newline > 0 ? v.slice(0, newline) : v
+    },
+    formatDate: function (v) {
+      return v.replace(/T|Z/g, ' ')
+    }
+  },
+
+  methods: {
+    fetchData: function () {
+      var xhr = new XMLHttpRequest()
+      var self = this
+      xhr.open('GET', apiURL + self.currentBranch + '&client_id=769085192c10d1669bee&client_secret=36220dd0aaff915490f4c7b3b1aa70ce4a0bac3f')
+      xhr.onload = function () {
+        self.commits = JSON.parse(xhr.responseText)
+      }
+      xhr.send()
+    }
   }
-});
-
-// First we detect the click event
-document.getElementById('colorblind1').addEventListener('click', function () {
-
-  // Using an if statement to check the class
-  if (document.body.classList.contains('colorblind1')) {
-    // The box that we clicked has a class of colorblind1 so let's remove it and add the good class
-   document.body.classList.remove('colorblind1');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('colorblind1');
-  }
-});
-
-// First we detect the click event
-document.getElementById('colorblind5').addEventListener('click', function () {
-
-  // Using an if statement to check the class
-  if (document.body.classList.contains('colorblind2')) {
-    // The box that we clicked has a class of colorblind2 so let's remove it and add the good class
-   document.body.classList.remove('colorblind2');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('colorblind2');
-  }
-});
-
-// First we detect the click event
-document.getElementById('colorblind3').addEventListener('click', function () {
-
-  // Using an if statement to check the class
-  if (document.body.classList.contains('colorblind3')) {
-    // The box that we clicked has a class of colorblind3 so let's remove it and add the good class
-   document.body.classList.remove('colorblind3');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('colorblind3');
-  }
-});
-
-// First we detect the click event
-document.getElementById('colorblind4').addEventListener('click', function () {
-
-  // Using an if statement to check the class
-  if (document.body.classList.contains('colorblind4')) {
-    // The box that we clicked has a class of colorblind4 so let's remove it and add the good class
-   document.body.classList.remove('colorblind4');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('colorblind4');
-  }
-});
-
-// First we detect the click event
-document.getElementById('colorblind5').addEventListener('click', function () {
-
-  // Using an if statement to check the class
-  if (document.body.classList.contains('colorblind5')) {
-    // The box that we clicked has a class of colorblind5 so let's remove it and add the good class
-   document.body.classList.remove('colorblind5');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('colorblind5');
-  }
-});
-
-// First we detect the click event
-document.getElementById('colorblind6').addEventListener('click', function () {
-
-  // Using an if statement to check the class
-  if (document.body.classList.contains('colorblind6')) {
-    // The box that we clicked has a class of colorblind6 so let's remove it and add the good class
-   document.body.classList.remove('colorblind6');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('colorblind6');
-  }
-});
-
-
-// First we detect the click event
-document.getElementById('colorblind7').addEventListener('click', function () {
-
-  // Using an if statement to check the class
-  if (document.body.classList.contains('colorblind7')) {
-    // The box that we clicked has a class of colorblind7 so let's remove it and add the good class
-   document.body.classList.remove('colorblind7');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('colorblind7');
-  }
-});
-
-
-// First we detect the click event
-document.getElementById('colorblind8').addEventListener('click', function () {
-
-  // Using an if statement to check the class
-  if (document.body.classList.contains('colorblind8')) {
-    // The box that we clicked has a class of colorblind8 so let's remove it and add the good class
-   document.body.classList.remove('colorblind8');
-  } else {
-    // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
-   document.body.classList.add('colorblind8');
-  }
-});
+})

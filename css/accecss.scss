@@ -1,12 +1,15 @@
 /// GRID
 
-  @mixin log(){
-    content:'.'attr(class);position: absolute;
-    top: 0;left: 0;z-index: 99999999;padding: .1em;background: rgba(0,0,0, .9);
-    opacity: .1;
-    color: #fff !important;
-    font-size: 14px;
-  }
+$path-to-filter: '../svg';
+
+@mixin log(){
+  content:'.'attr(class);position: absolute;
+  top: 0;left: 0;z-index: 99999999;padding: .1em;background: rgba(0,0,0, .9);
+  opacity: .1;
+  color: #fff !important;
+  font-size: 14px;
+}
+
 @mixin grid(){
 
 
@@ -56,109 +59,6 @@
       }
     }
   }
-  
-}
-
-
-@mixin grid-logged(){
-
-  &:before{content:'.'attr(class);position: absolute;
-  top: 0;left: 0;z-index: 999999999;background: rgba(0,0,0, .9);}
-  box-shadow: inset 0 0 0 1px rgba(purple, .1) !important;
-  &:hover{
-    box-shadow: inset 0 0 0 1px rgba(purple, 1) !important;
-  }
-  *{
-    &:before{
-      @include log();
-    }
-
-    box-shadow: inset 0 0 0 1px rgba(red, .1) !important;
-    &:hover{
-      box-shadow: inset 0 0 0 1px rgba(red, 1) !important;
-      &:before{
-        opacity: 1;
-      }
-    }
-    + *{
-      + &:before{
-        @include log();
-      }
-
-      box-shadow: inset 0 0 0 1px rgba(blue, .1) !important;
-      &:hover{
-        box-shadow: inset 0 0 0 1px rgba(blue, 1) !important;
-        &:before{
-          opacity: 1;
-        }
-      }
-      + *{
-        + &:before{
-          @include log();
-        }
-
-        box-shadow: inset 0 0 0 1px rgba(green, .1) !important;
-        &:hover{
-          box-shadow: inset 0 0 0 1px rgba(green, 1) !important;
-          &:before{
-            opacity: 1;
-          }
-        }
-        + *{
-          + &:before{
-            @include log();
-          }
-
-          box-shadow: inset 0 0 0 1px rgba(purple, .1) !important;
-          &:hover{
-            box-shadow: inset 0 0 0 1px rgba(purple, 1) !important;
-            &:before{
-              opacity: 1;
-            }
-          }
-          + *{
-            + &:before{
-              @include log();
-            }
-
-            box-shadow: inset 0 0 0 1px rgba(red, .1) !important;
-            &:hover{
-              box-shadow: inset 0 0 0 1px rgba(red, 1) !important;
-              &:before{
-                opacity: 1;
-              }
-            }
-            +  *{
-              +  &:before{
-                @include log();
-              }
-
-              box-shadow: inset 0 0 0 1px rgba(blue, .1) !important;
-              &:hover{
-                box-shadow: inset 0 0 0 1px rgba(blue, 1) !important;
-                &:before{
-                  opacity: 1;
-                }
-              }
-              +  *{
-                +  &:before{
-                  @include log();
-                }
-
-                box-shadow: inset 0 0 0 1px rgba(green, .1) !important;
-                &:hover{
-                  box-shadow: inset 0 0 0 1px rgba(green, 1) !important;
-                  &:before{
-                    opacity: 1;
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
 }
 
 
@@ -174,30 +74,75 @@
 ///
 /// 
 /// Usage : 
-/// `@include accecss(<true:false>, <true:false>, <false:filterName>);` 
+/// `@include accecss(<element:false>, <true:false>, <true:false>, <filterName:false>);` 
 ///
 /// @group helpers
 
 @mixin accecss($element: false, $zones: false, $grayscale: false, $cbFilter: false){
 
   @if $grayscale == true and $cbFilter == false {
-    html body{
-      filter: grayscale(100%);
+    @if $element != false {
+      #{$element} {
+        filter: grayscale(100%);
+      }
+    }
+
+    @else {
+      html body {
+        filter: grayscale(100%);
+      }
     }
   }
   @else if $grayscale == true and $cbFilter != false {
-    html body{
-      filter: url('../css/filters.svg##{$cbFilter}') grayscale(0) !important;
-    }
-  }
-  
-  @else if $grayscale == false and $cbFilter != false{
-    html body{
-      filter: url('../css/filters.svg##{$cbFilter}') grayscale(0) !important;
-    }
-  }
-  
+    @if $element != false {
+      #{$element} {
 
+
+        filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}');
+
+      }
+    }
+
+    @else {
+      html body {
+        filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}') grayscale(0) !important;
+      }
+    }
+  }
+
+  @else if $grayscale == false and $cbFilter != false{
+    @if $element != false {
+      #{$element} {
+
+
+        filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}');
+
+      }
+    }
+
+    @else {
+      html body {
+        filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}') grayscale(0) !important;
+      }
+    }
+  }
+
+  @else if $cbFilter != false and $element != false {
+    @if $element != false {
+      #{$element} {
+
+        filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}');
+
+      }
+    }
+
+    @else {
+      html body {
+        filter: url('#{$path-to-filter}/filters.svg##{$cbFilter}') grayscale(0) !important;
+      }
+    }
+  }
+  
   @if $zones == true or
   $zones == 'logs' or
   $grayscale == true and $cbFilter == false and $zones == true or
@@ -210,30 +155,22 @@
       @if $element == false {
         html, body{
           @include grid();
-
-          @if $zones == 'logs'{
-            @include grid-logged();
-          }
         }
       }
 
       @else if $element != false {
         #{$element}{
           @include grid();
-
-          @if $zones == 'logs'{
-            @include grid-logged();
-          }
         }
       }
     }
 
 
-    @else{
-/*
-   CSS accecss : FALSE
-   */
- }
+  @else{
+  /*
+  CSS accecss : FALSE
+  */
+  }
 }
 
 
