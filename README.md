@@ -109,3 +109,7 @@ _Colour (color) blindness (colour vision deficiency, or CVD) affects approximate
 ## Question ?
 
 For any further informations, feel free to ping me on twitter : [@LukyVj](http://twitter.com/lukyvj)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/LukyVj/accecss/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
