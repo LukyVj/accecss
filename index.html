@@ -139,10 +139,10 @@
       <p>Once <strong><a href="#one">1</a></strong> & <strong><a href="#two">2</a></strong> are done, you're ready to use the mixin, here is how looks an inactive Accecss mixin, note that by default, all the settings are set to false</p>
 
       <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
-  <span class="param">false</span><span class="coma">,</span>  <span class="comment">// ELEMENT       | False</span>
-  <span class="param">false</span><span class="coma">,</span>  <span class="comment">// CSS ZONE      | False</span>
-  <span class="param">false</span><span class="coma">,</span>  <span class="comment">// GRAYSCALE     | False</span>
-  <span class="param">false</span>   <span class="comment">// COLORBLIND    | False</span>
+  <span class="param">$element: false</span><span class="coma">,</span>  
+  <span class="param">$zones: false</span><span class="coma">,</span>  
+  <span class="param">$grayscale: false</span><span class="coma">,</span>  
+  <span class="param">$cbFilter: false</span>   <span class="comment">// COLORBLIND    | False</span>
 <span class="mixin">)</span><span class="coma">;</span>
 </code></pre>
 
@@ -150,10 +150,10 @@
 
   <p>Let's say you want to debug your whole document, and, for example, let's say you want to get your elements outlined</p>
   <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
-  <span class="active">'html body'</span><span class="coma">,</span>
-  <span class="active">true</span><span class="coma">,</span>
-  <span class="param">false</span><span class="coma">,</span>
-  <span class="param">false</span>
+  <span class="active">$element: 'html body'</span><span class="coma">,</span>
+  <span class="active">$zones: true</span><span class="coma">,</span>
+  <span class="param">$grayscale: false</span><span class="coma">,</span>
+  <span class="param">$cbFilter: false</span>
 <span class="mixin">)</span><span class="coma">;</span>
 </code></pre>
 
@@ -161,10 +161,10 @@
 
   <p>To add a grayscaled effect : </p>
   <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
-  <span class="active">'html body'</span><span class="coma">,</span>
-  <span class="param">false</span><span class="coma">,</span>
-  <span class="active">true</span><span class="coma">,</span>
-  <span class="param">false</span>
+  <span class="active">$element: 'html body'</span><span class="coma">,</span>
+  <span class="param">$zones: false</span><span class="coma">,</span>
+  <span class="active">$grayscale: true</span><span class="coma">,</span>
+  <span class="param">$cbFilter: false</span>
 <span class="mixin">)</span><span class="coma">;</span>
 </code></pre>
 
@@ -172,10 +172,10 @@
 
  <p>And finally, add a blindness color filter : </p>
   <pre class="code-sample full-width"><code><span class="at-rule">@include</span> <span class="mixin">accecss( </span><span class="param">
-  <span class="active">'html body'</span><span class="coma">,</span>
-  <span class="param">false</span><span class="coma">,</span>
-  <span class="param">false</span><span class="coma">,</span>
-  <span class="active">protanopia</span> <span class="comment">// You can use all <a href="#filterList">filters listed over</a></span>
+  <span class="active">$element: 'html body'</span><span class="coma">,</span>
+  <span class="param">$zones: false</span><span class="coma">,</span>
+  <span class="param">$grayscale: false</span><span class="coma">,</span>
+  <span class="active">$cbFilter: protanopia</span> <span class="comment">// You can use all <a href="#filterList">filters listed over</a></span>
 <span class="mixin">)</span><span class="coma">;</span>
 </code></pre>
 
