@@ -281,23 +281,6 @@
          <iframe src="https://ghbtns.com/github-btn.html?user=lukyvj&repo=accecss&type=watch&count=true&v=2" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
          <iframe src="https://ghbtns.com/github-btn.html?user=lukyvj&repo=accecss&type=fork&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
       </div>
-
-      <span class="divider"></span>
-
-       <div id="commits">
-
-        <template v-repeat="b:branches">
-          <h4>Latest Commits on <strong><label for="{{*b}}">accecss@{{currentBranch}}</label></strong></h4>
-        </template>
-        <ul class="github-tracker">
-          <li v-repeat="commits" onclick="window.location='{{html_url}}'">
-            [<a href="{{html_url}}" target="_blank" class="commit">{{sha.slice(0, 7)}}</a>]
-            - <span class="message">{{commit.message | truncate}}</span> | 
-            by <span class="author">{{commit.author.name}}</span>
-            <span class="date">{{commit.author.date | formatDate}}</span>
-          </li>
-        </ul>
-      </div>
       </section>
 
      </div>
