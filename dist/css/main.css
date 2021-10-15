@@ -887,66 +887,66 @@ body.zones.grayscale, body.grayscale {
   filter: grayscale(100%);
 }
 body.zones.colorblind1, body.colorblind1 {
-  -webkit-filter: url("css/filters.svg#protanopia") grayscale(0) !important;
-  filter: url("css/filters.svg#protanopia") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#protanopia") grayscale(0) !important;
+  filter: url("filters.svg#protanopia") grayscale(0) !important;
 }
 body _:-moz-tree-row(hover), body.zones.colorblind1,
 body _:-moz-tree-row(hover), body.colorblind1 {
-  filter: url("../css/filters.svg#protanopia") grayscale(0) !important;
+  filter: url("../filters.svg#protanopia") grayscale(0) !important;
 }
 body.zones.colorblind2, body.colorblind2 {
-  -webkit-filter: url("css/filters.svg#protanomaly") grayscale(0) !important;
-  filter: url("css/filters.svg#protanomaly") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#protanomaly") grayscale(0) !important;
+  filter: url("filters.svg#protanomaly") grayscale(0) !important;
 }
 body _:-moz-tree-row(hover), body.zones.colorblind2,
 body _:-moz-tree-row(hover), body.colorblind2 {
-  filter: url("../css/filters.svg#protanomaly") grayscale(0) !important;
+  filter: url("../filters.svg#protanomaly") grayscale(0) !important;
 }
 body.zones.colorblind3, body.colorblind3 {
-  -webkit-filter: url("css/filters.svg#deuteranopia") grayscale(0) !important;
-  filter: url("css/filters.svg#deuteranopia") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#deuteranopia") grayscale(0) !important;
+  filter: url("filters.svg#deuteranopia") grayscale(0) !important;
 }
 body _:-moz-tree-row(hover), body.zones.colorblind3,
 body _:-moz-tree-row(hover), body.colorblind3 {
-  filter: url("../css/filters.svg#deuteranopia") grayscale(0) !important;
+  filter: url("../filters.svg#deuteranopia") grayscale(0) !important;
 }
 body.zones.colorblind4, body.colorblind4 {
-  -webkit-filter: url("css/filters.svg#deuteranomaly") grayscale(0) !important;
-  filter: url("css/filters.svg#deuteranomaly") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#deuteranomaly") grayscale(0) !important;
+  filter: url("filters.svg#deuteranomaly") grayscale(0) !important;
 }
 body _:-moz-tree-row(hover), body.zones.colorblind4,
 body _:-moz-tree-row(hover), body.colorblind4 {
-  filter: url("../css/filters.svg#deuteranomaly") grayscale(0) !important;
+  filter: url("../filters.svg#deuteranomaly") grayscale(0) !important;
 }
 body.zones.colorblind5, body.colorblind5 {
-  -webkit-filter: url("css/filters.svg#tritanopia") grayscale(0) !important;
-  filter: url("css/filters.svg#tritanopia") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#tritanopia") grayscale(0) !important;
+  filter: url("filters.svg#tritanopia") grayscale(0) !important;
 }
 body _:-moz-tree-row(hover), body.zones.colorblind5,
 body _:-moz-tree-row(hover), body.colorblind5 {
-  filter: url("../css/filters.svg#tritanopia") grayscale(0) !important;
+  filter: url("../filters.svg#tritanopia") grayscale(0) !important;
 }
 body.zones.colorblind6, body.colorblind6 {
-  -webkit-filter: url("css/filters.svg#tritanomaly") grayscale(0) !important;
-  filter: url("css/filters.svg#tritanomaly") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#tritanomaly") grayscale(0) !important;
+  filter: url("filters.svg#tritanomaly") grayscale(0) !important;
 }
 body _:-moz-tree-row(hover), body.zones.colorblind6,
 body _:-moz-tree-row(hover), body.colorblind6 {
-  filter: url("../css/filters.svg#tritanomaly") grayscale(0) !important;
+  filter: url("../filters.svg#tritanomaly") grayscale(0) !important;
 }
 body.zones.colorblind7, body.colorblind7 {
-  -webkit-filter: url("css/filters.svg#achromatopsia") grayscale(0) !important;
-  filter: url("css/filters.svg#achromatopsia") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#achromatopsia") grayscale(0) !important;
+  filter: url("filters.svg#achromatopsia") grayscale(0) !important;
 }
 body _:-moz-tree-row(hover), body.zones.colorblind7,
 body _:-moz-tree-row(hover), body.colorblind7 {
-  filter: url("../css/filters.svg#achromatopsia") grayscale(0) !important;
+  filter: url("../filters.svg#achromatopsia") grayscale(0) !important;
 }
 body.zones.colorblind8, body.colorblind8 {
-  -webkit-filter: url("css/filters.svg#achromatomaly") grayscale(0) !important;
-  filter: url("css/filters.svg#achromatomaly") grayscale(0) !important;
+  -webkit-filter: url("filters.svg#achromatomaly") grayscale(0) !important;
+  filter: url("filters.svg#achromatomaly") grayscale(0) !important;
 }
 body _:-moz-tree-row(hover), body.zones.colorblind8,
 body _:-moz-tree-row(hover), body.colorblind8 {
-  filter: url("../css/filters.svg#achromatomaly") grayscale(0) !important;
+  filter: url("../filters.svg#achromatomaly") grayscale(0) !important;
 }
